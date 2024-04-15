@@ -2,7 +2,7 @@
 
 VALOR=0
 if [ $# -eq 1 ]; then
-    VALOR=`expr $1 + 1`
+    expr $num \* 1 >/dev/null 2> /dev/null
     if [ $? -eq 0 ]; then
     
     echo "Es un numero"
