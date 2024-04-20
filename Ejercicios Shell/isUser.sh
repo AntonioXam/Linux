@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ $# -ne 1 ]; then
     echo "Se debe proporcionar un nombre de usuario como unico parametro"
@@ -11,5 +11,3 @@ else
         echo "El usuario actual no esta conectado"
     fi
 fi
-
-
