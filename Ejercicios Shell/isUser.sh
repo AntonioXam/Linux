@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [ $# -ne 1 ]; then
     echo "Se debe proporcionar un nombre de usuario como unico parametro"
