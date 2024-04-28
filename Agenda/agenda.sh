@@ -60,7 +60,7 @@ nuevo () {
     expr "$tlf" \* 1 >/dev/null 2> /dev/null
     while [ $? -ne 0 ]
     do
-        echo -n "ERROR: El telfoy debe ser un número. Introduce telfoy del nuevo contacto: "
+        echo -n "ERROR: El teléfono debe ser un número. Introduce telfoy del nuevo contacto: "
         read tlf
     done
 
@@ -147,7 +147,7 @@ nuevo () {
 buscar () {
     echo "Nombre del contacto a buscar:"
     read contacto
-    grep -q "^$contacto:" agenda.txt
+    grep -q "$contacto:" agenda.txt
     if [ $? -eq 0 ]
     then
         grep "^$contacto:" agenda.txt | cut -d: -f2-
@@ -179,7 +179,7 @@ eliminar () {
     then
         echo -n "¿Está seguro de que desea eliminar $contacto? (s/n) "
         read -r RESP
-        if [[ $RESP =~ [Ss] ]]
+        if [[ $RESP = [Ss] ]]
         then
             grep -v "^$contacto:" agenda.txt > agenda.tmp
             mv agenda.tmp agenda.txt
@@ -204,6 +204,8 @@ cumple () {
     # Calculamos la fecha de hoy
     diaHoy=`date +%d`
     mesHoy=`date +%m`
+
+    
 
     # Buscamos en el fichero agenda.txt el patrón exactamente como está escrito:
     # :$diaHoy:$mesHoy:
@@ -280,7 +282,7 @@ do
 	eliminar
 	;;
  
-     5) echo " 5. Avisar cumpleanhos" 
+     5) echo " 5. Avisar cumpleaños" 
 	cumple 
 	;;
   
